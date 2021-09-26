@@ -24,6 +24,10 @@ public class Athlete implements Serializable {
     private String firstName;
     private String lastName;
     private String cpf;
+
+    @OneToOne
+    private Address address;
+
     private Double weight;
     private Double height;
 
