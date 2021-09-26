@@ -41,6 +41,11 @@ public class Athlete implements Serializable {
     @OneToOne
     private User user;
 
+
+    public void setPosition(Integer position) {
+        this.position = BasketballPosition.valueOf(position);
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
