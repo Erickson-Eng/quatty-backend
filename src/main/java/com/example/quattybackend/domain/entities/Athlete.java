@@ -21,11 +21,15 @@ public class Athlete implements Serializable {
     private static final long serialVersionUID = 849589476800986227L;
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+    @Column(nullable = false)
     private String firstName;
+    @Column(nullable = false)
     private String lastName;
+    @Column(nullable = false, length = 14)
     private String cpf;
 
-    @OneToOne
+    @JoinColumn(nullable = false)
+    @OneToOne(cascade = CascadeType.ALL, optional = false)
     private Address address;
 
     private Double weight;

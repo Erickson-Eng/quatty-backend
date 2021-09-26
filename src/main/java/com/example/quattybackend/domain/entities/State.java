@@ -1,5 +1,6 @@
 package com.example.quattybackend.domain.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
@@ -22,8 +23,11 @@ public class State implements Serializable {
     private static final long serialVersionUID = -2781809049122439075L;
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+    @Column(nullable = false)
     private String stateName;
+    @Column(length = 2, nullable = false)
     private String uf;
+    @JsonIgnore
     @OneToMany(mappedBy = "state")
     @ToString.Exclude
     private List<City> cities = new ArrayList<>();

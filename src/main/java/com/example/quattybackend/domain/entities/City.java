@@ -20,8 +20,10 @@ public class City implements Serializable {
     private static final long serialVersionUID = -6773283744477867555L;
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+    @Column(nullable = false)
     private String cityName;
-    @JoinColumn
+
+    @JoinColumn(nullable = false)
     @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH})
     private State state;
 
