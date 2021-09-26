@@ -22,9 +22,9 @@ public class AthleteService {
     private AthleteMapper athleteMapper;
     
     
-    public void insert(AthleteRequest request){
+    public Athlete insert(AthleteRequest request){
         try{
-            athleteRepository.save(athleteMapper.toEntity(request));
+            return athleteRepository.save(athleteMapper.toEntity(request));
         }catch (DataIntegrityViolationException e){
             throw new DataIntegrityViolationException("Unable to save athlete.\n" +
                     "Required arguments are missing");

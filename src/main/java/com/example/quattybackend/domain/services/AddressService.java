@@ -21,9 +21,9 @@ public class AddressService {
     private AddressRepository addressRepository;
     private AddressMapper addressMapper;
 
-    public void insert(AddressRequest request){
+    public Address insert(AddressRequest request){
         try{
-            addressRepository.save(addressMapper.toEntity(request));
+            return addressRepository.save(addressMapper.toEntity(request));
         }catch (DataIntegrityViolationException e){
             throw new DataIntegrityViolationException("Unable to save address.\n" +
                     "Required arguments are missing");

@@ -21,9 +21,9 @@ public class UserService {
     private UserRepository userRepository;
     private UserMapper userMapper;
 
-    public void insert(UserRequest request){
+    public User insert(UserRequest request){
         try{
-            userRepository.save(userMapper.toEntity(request));
+            return userRepository.save(userMapper.toEntity(request));
         }
         catch (DataIntegrityViolationException e){
             throw new DataIntegrityViolationException("Unable to save user.\n" +
