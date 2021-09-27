@@ -1,5 +1,6 @@
 # Quatty's Application for athletes
 
+[![wakatime](https://wakatime.com/badge/github/Erickson-Eng/quatty-backend.svg)](https://wakatime.com/badge/github/Erickson-Eng/quatty-backend)
 ## Objective
 
 Provide an API capable of registering athletes
